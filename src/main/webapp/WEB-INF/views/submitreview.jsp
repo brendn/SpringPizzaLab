@@ -5,7 +5,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="styles.css" />
 
-        <title>Test Form</title>
+        <title>Submit a Review</title>
     </head>
     <body>
         <div class="box">
@@ -37,6 +37,8 @@
                         <br />
                         <input type="submit" />
                     </form>
+                    <hr />
+                    <p><div id="button"><a href="/">Home</a></div></p>
                     </div>
                 </div>
             </div>

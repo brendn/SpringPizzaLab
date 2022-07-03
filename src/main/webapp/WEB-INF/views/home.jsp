@@ -17,10 +17,12 @@
                         <p>Welcome to Brendan's Pizzas. We've got the best pizza in town.  Don't believe us? That's lame.</p>
                         <hr />
                         Check out our specialty pizzas!
-                        <p><a href="/order?type=picklenutella">Pickle and Nutella Dessert Pizza</a></p>
-
+                        <p><a href="/specialtyorder?name=Sand&price=29.99">Sand Pizza</a>: This pizza is made out of sand!</p>
+                        <p><a href="/specialtyorder?name=Spooky&price=19.99">Spooky Pizza</a>: Be careful! This pizza might jump and scare you!</p>
+                        <p><a href="/specialtyorder?name=Living&price=99.99">Living Pizza</a>: A great family pet! It's pizza with legs. Please don't eat it.</p>
                         <hr />
-                        <p><div id="button"><a href="/submitreview">Submit a review</a></div></p>
+                        <p><div id="button"><a href="/order">Custom Order</a></div>
+                        <div id="button"><a href="/submitreview">Submit a review</a></div></p>
                     </div>
                 </div>
             </div>

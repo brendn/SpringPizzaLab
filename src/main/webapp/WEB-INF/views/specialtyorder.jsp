@@ -5,18 +5,17 @@
     <head>
         <link rel="stylesheet" type="text/css" href="styles.css" />
 
-        <title>Review Submitted!</title>
+        <title>Custom Pizza Order Confirmed!</title>
     </head>
     <body>
         <div class="box">
             <div id="container">
                 <div id="window_main">
-                    <div id="window_title">Review Submitted</div>
+                    <div id="window_title">Specialty Order</div>
                     <div id="window_text">
-                        <p>Thanks for your review!</p>
+                        <p>Specialty Pizza!</p>
                         <p><strong>Name</strong>: ${name}</p>
-                        <p><strong>Comment</strong>: ${comment}</p>
-                        <p><strong>Rating</strong>: ${rating}/10</p>
+                        <p><strong>Price</strong>: $${price}</p>
                         <hr />
                         <p><div id="button"><a href="/">Home</a></div></p>
                     </div>
