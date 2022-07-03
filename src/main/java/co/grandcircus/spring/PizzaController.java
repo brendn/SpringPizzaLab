@@ -40,20 +40,26 @@ public class PizzaController {
                                    Model model) {
         model.addAttribute("size", size);
         model.addAttribute("toppings", toppings);
+
+        // If there are no instructions given, we will display 'None'
         model.addAttribute("instructions", instructions.length() == 0 ? "None" : instructions);
+
+        // If the value for the gluten-free checkbox is null then it is unchecked
         String glutenOut = glutenFree == null ? "No" : "Yes";
         model.addAttribute("glutenFree", glutenOut);
-        int size2 = size.equals("Small") ? 0 : size.equals("Medium") ? 1 : 2;
-        String order = "Your total is " + NumberFormat.getCurrencyInstance().format(calcPizza(size2, toppings, glutenFree != null));
+
+        // Display string that will show on the displayorder.jsp page
+        String order = "Your total is " + NumberFormat.getCurrencyInstance().format(calcPizza(size, toppings, glutenFree != null));
         model.addAttribute("order", order);
 
         return "displayorder";
     }
 
     // Calculates the cost of the pizza given size, toppings, gluten free
-    private double calcPizza(int size, int toppings, boolean glutenFree) {
-        double base = size == 0 ? 7 : size == 1 ? 10 : 12;
-        double toppingMult = size == 0 ? 0.5 : size == 1 ? 1 : 1.25;
+    private double calcPizza(String size, int toppings, boolean glutenFree) {
+        int size2 = size.equals("Small") ? 0 : size.equals("Medium") ? 1 : 2;
+        double base = size2 == 0 ? 7 : size2 == 1 ? 10 : 12;
+        double toppingMult = size2 == 0 ? 0.5 : size2 == 1 ? 1 : 1.25;
         return base + (toppings * toppingMult) + (glutenFree ? 2 : 0);
     }
 
