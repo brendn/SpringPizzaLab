@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.text.NumberFormat;
 
 @Controller
-public class AttemptedController {
+public class PizzaController {
 
     @RequestMapping("/")
-    public String returnAString(Model model) {
+    public String index(Model model) {
         return "home";
     }
 
     @RequestMapping("/submitreview")
-    public String showForm() {
+    public String submitReview() {
         return "submitreview";
     }
 
@@ -27,8 +27,7 @@ public class AttemptedController {
     }
 
     @RequestMapping("/specialtyorder")
-    public String showAnimal(@RequestParam String name, @RequestParam String price, Model model) {
-
+    public String specialtyOrder(@RequestParam String name, @RequestParam String price, Model model) {
         model.addAttribute("name", name);
         model.addAttribute("price", price);
 
