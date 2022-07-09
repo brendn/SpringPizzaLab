@@ -23,7 +23,7 @@
                           <option value="Large">Large</option>
                         </select>
                         <br />
-                        Topping Count: <input type="number" id="toppings" name="toppings" min="0" value = "0" max="100">
+                        Topping Count: <input type="number" id="toppings" name="toppings" min="0" value = "0" max="10">
                         <br />
                         Special Instructions: <input name="instructions" />
                         <br />

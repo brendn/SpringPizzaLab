@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.text.NumberFormat;
+import java.util.List;
 
 @Controller
 public class PizzaController {
 
     @RequestMapping("/")
-    public String index() {
+    public String index(Model model) {
         return "home";
     }
 
@@ -98,6 +99,14 @@ public class PizzaController {
         model.addAttribute("name", name);
         model.addAttribute("comment", comment);
         model.addAttribute("rating", rating);
+        String errorMsg = "";
+        if (name.length() <= 0) {
+            errorMsg += "<p>Name is required for review (this way we can ban you from the establishment if it's bad)</p>";
+        }
+        if (comment.length() < 5) {
+            errorMsg += "<p>Comment must be longer than 5 characters. It's not too much to ask for.</p>";
+        }
+        model.addAttribute("error", errorMsg);
         return "displayreview";
     }
 }
